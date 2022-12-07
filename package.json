@@ -1,0 +1,26 @@
+{
+  "name": "cpsc349-exercise4",
+  "version": "1.0.0",
+  "description": "Installing and configuring PocketBase to act as a backend and esbuild to compile JSX for use with React",
+  "main": "index.js",
+  "scripts": {
+    "pocketbase": "./pocketbase serve",
+    "esbuild": "esbuild src/app.jsx --outfile=pb_public/app.js --watch",
+    "browsersync": "browser-sync http://localhost:8090 --files 'pb_public/**/*'",
+    "start": "npm-run-all --parallel esbuild pocketbase browsersync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrmarlrico/cpsc349-exercise4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrmarlrico/cpsc349-exercise4/issues"
+  },
+  "homepage": "https://github.com/mrmarlrico/cpsc349-exercise4#readme",
+  "devDependencies": {
+    "esbuild": "0.16.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
